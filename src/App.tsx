@@ -5,6 +5,7 @@ import './App.css';
 
 // Pages
 import DashboardLanding from './pages/index'
+import VideoLibrary from './pages/video-library'
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path={AppRoutes.landing} element={<DashboardLanding />} />
+          <Route path={AppRoutes.videoLibrary} element={<VideoLibrary />} />
         </Routes>
       </Router>
     </Suspense>
