@@ -10,6 +10,11 @@ import { ReactComponent as Report } from "../assets/icons/report.svg";
 import { ReactComponent as LearningPlan } from "../assets/icons/cart.svg";
 import { ReactComponent as Subscriptions } from "../assets/icons/card.svg";
 import { ReactComponent as Biology } from "../assets/icons/biology.svg";
+import { ReactComponent as lesson1 } from "../assets/images/lesson-one.svg";
+import { ReactComponent as lesson2 } from "../assets/images/lesson-two.svg";
+import { ReactComponent as lesson3 } from "../assets/images/lesson-three.svg";
+import { ReactComponent as lesson4 } from "../assets/images/lesson-four.svg";
+import { ReactComponent as lesson5 } from "../assets/images/lesson-five.svg";
 
 
 type IconComponentProps = { name: string };
@@ -27,7 +32,12 @@ const iconTypes: IconTypes = {
    report: Report,
    cart: LearningPlan,
    subscriptions: Subscriptions,
-   biology: Biology
+   biology: Biology,
+   lesson1: lesson1,
+   lesson2: lesson2,
+   lesson3: lesson3,
+   lesson4: lesson4,
+   lesson5: lesson5,
 };
 
 const IconComponent = ({ name, ...props }: IconComponentProps) => {

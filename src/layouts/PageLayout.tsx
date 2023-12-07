@@ -8,7 +8,7 @@ const Dashboardlayout: React.FC<ReactBaseModel> = ({ children }) => {
       <div>
         <SidebarComponent />
       </div>
-      <div className="w-full h-full">
+      <div className="h-full">
         {children}
       </div>
     </main>
