@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom'
-import IconComponent from "../components/Icon";
+import IconComponent from "../../components/Icon";
 // import { Video } from 'cloudinary-react';
-import PageLayout from "../layouts/PageLayout"
-import ArrowLeft from '../assets/icons/arrow-left.svg'
+import PageLayout from "../../layouts/PageLayout"
+import ArrowLeft from '../../assets/icons/arrow-left.svg'
 
 const VideoLibrary: React.FC = () => {
 
@@ -33,21 +33,18 @@ const VideoLibrary: React.FC = () => {
       videoUrl: 'https://res.cloudinary.com/www-pluslitedesigns-org/video/upload/v1701773950/BIO10_02_07_02_tvrsx7.mp4'
     },
     {
-      name: 'Kingdom or Domain',
+      name: 'Kingdom or Domain?',
       lesson: 'Lesson 5',
       icon: 'lesson5',
       videoUrl: 'https://res.cloudinary.com/www-pluslitedesigns-org/video/upload/v1701773949/BIO10_02_07_01_ydc4em.mp4'
     },
   ]
 
-  const [isWiFiConnected, setIsWiFiConnected] = useState(false);
-
-  const [cachedVideos, setCachedVideos] = useState([]);
-
-  const [currentVideoId, setCurrentVideoId] = useState();
-
-
   const navigate = useNavigate()
+
+  const viewVideo = (videoId: string) => {
+    navigate('/video-library/chapters', {state:{video_url: videoId}})
+  }
 
   return (
     <PageLayout>
@@ -67,7 +64,7 @@ const VideoLibrary: React.FC = () => {
           <div className="grid grid-cols-4 gap-7">
             {
               videoArr && videoArr.map((video: any, index: number) => (
-                <div key={index} className="bg-[#ffffff] cursor-pointer flex justify-center items-center flex-col rounded-xl px-6">
+                <div onClick={() => viewVideo(video.videoUrl)} key={index} className="bg-[#ffffff] cursor-pointer flex justify-center items-center flex-col rounded-xl px-6 pt-6">
                   <IconComponent name={video.icon} />
                   <p className="capitalize text-[#313848] text-sm font-bold text-opacity-50 pb-4">chapter { index + 1 }</p>
                   <p className="text-center text-[#313848] font-bold pb-8">{ video.name }</p>

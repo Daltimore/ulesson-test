@@ -1,4 +1,6 @@
 export enum AppRoutes {
-  landing = '/',
-  videoLibrary = '/video-library'
+  login = '/',
+  landing = '/dashboard',
+  videoLibrary = '/video-library',
+  chapters = '/video-library/chapters'
 }

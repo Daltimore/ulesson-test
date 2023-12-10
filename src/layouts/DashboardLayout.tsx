@@ -5,7 +5,7 @@ import NavbarComponent from "../components/Navbar";
 
 const Dashboardlayout: React.FC<ReactBaseModel> = ({ children }) => {
   return (
-    <main className="flex">
+    <main className="flex !w-full">
       <div>
         <SidebarComponent />
       </div>

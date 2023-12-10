@@ -86,18 +86,21 @@ const SidebarComponent: React.FC = () => {
             <li className="relative">
               <a
                 href={item.route}
-                className={item.route === window.location.pathname ? 'bg-orange-400 rounded flex items-center py-4 pl-4 gap-4 mb-4' : 'flex items-center pl-4 py-4 gap-4'}
+                className={item.route.startsWith(window.location.pathname)
+                  ? 'bg-orange-400 rounded flex items-center py-4 px-4 gap-4 mb-4'
+                  : 'flex items-center pl-4 py-4 gap-4'}
                 >
-                <IconComponent name={item.icon} />
-                <p className="text-white text-sm">{ item.name }</p>
-                {
-                  item.hasChild ? <img src={Arrowup} alt="" className="absolute right-0" /> : ''
-                }
+                  <IconComponent name={item.icon} />
+                  <p className="text-white text-sm">{ item.name }</p>
+                  {
+                    item.hasChild ? <img src={Arrowup} alt="" className="absolute right-0" /> : ''
+                  }
               </a>
             </li>
           </ul>
          )) 
       }
+
       <div className="border-b border-gray-500 my-6"></div>
       {
          sidebarItems.others && sidebarItems.others.map((item: any, index: number) => (
@@ -105,19 +108,20 @@ const SidebarComponent: React.FC = () => {
             <li className="relative">
               <a
                 href={item.route}
-                className={item.route === window.location.pathname ? 'bg-orange-400 rounded flex items-center py-4 pl-4 gap-4 mb-4' : 'flex items-center pl-4 py-4 gap-4'}
+                className={item.route.startsWith(window.location.pathname)
+                  ? 'bg-orange-400 rounded flex items-center py-4 px-4 gap-4 mb-4'
+                  : 'flex items-center pl-4 py-4 gap-4'}
                 >
-                <IconComponent name={item.icon} />
-                <p className="text-white text-sm">{ item.name }</p>
-                {
-                  item.hasChild ? <img src={Arrowup} alt="" /> : ''
-                }
+                  <IconComponent name={item.icon} />
+                  <p className="text-white text-sm">{ item.name }</p>
+                  {
+                    item.hasChild ? <img src={Arrowup} alt="" /> : ''
+                  }
               </a>
             </li>
           </ul>
          )) 
       }
-      
     </aside>
   )
 }
